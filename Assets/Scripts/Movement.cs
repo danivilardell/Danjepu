@@ -32,12 +32,4 @@ public class Movement : MonoBehaviour
         }
 
     }
-
-    void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log("hola1");
-        if(col.gameObject.tag == "Moneda") {
-            Debug.Log("hola");
-            col.gameObject.SetActive(false);
-        }
-    }
 }
