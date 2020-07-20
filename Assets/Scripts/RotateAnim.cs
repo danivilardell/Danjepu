@@ -10,7 +10,9 @@ public class RotateAnim : MonoBehaviour
     
     void Update()
     {
-       	if(Input.GetKey(run1)) transform.eulerAngles = new Vector3(0, 0, 0);
-       	else if(Input.GetKey(run2)) transform.eulerAngles = new Vector3(0, 180, 0); 
+       	if(Input.GetKey(run1))  gameObject.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+       	else if(Input.GetKey(run2)) {
+       		gameObject.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+       	}
     }
 }

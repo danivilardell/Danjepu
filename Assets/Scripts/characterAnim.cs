@@ -24,6 +24,7 @@ public class characterAnim : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow)) {
             anim.SetTrigger("jump");
             anim.SetBool("isJumping", true);
+            Debug.Log("hola");
         } else {
             anim.SetBool("isJumping", false);
         }
