@@ -7,7 +7,7 @@ public class Fall_to_the_pit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-    	if(col.tag == "Enemy") {
+    	if(col.tag == "Player") {
         	player.transform.position = respown.transform.position;
         	DeathsTextScript.deathAmaunt += 1;
         }
