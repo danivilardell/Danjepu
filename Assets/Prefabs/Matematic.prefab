@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 3432227179743227956}
   - component: {fileID: 5037892818055974482}
   - component: {fileID: 4183378509788223366}
+  - component: {fileID: 8302208615212891252}
   m_Layer: 0
   m_Name: Matematic
   m_TagString: Player
@@ -199,6 +200,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.882519, y: 8.602304}
   m_EdgeRadius: 0
+--- !u!114 &8302208615212891252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743900985279710686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3659505b53b6a724cafd93564f0e03ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!1 &2743900985793954248
 GameObject:
   m_ObjectHideFlags: 0
