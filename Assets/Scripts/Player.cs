@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 		if(currentHealth < 0) {
 			player.transform.position = respown.transform.position;
         	DeathsTextScript.deathAmaunt += 1;
+        	currentHealth = maxHealth;
+        	healthBar.SetHealth(currentHealth);
 		}
 	}
 }
