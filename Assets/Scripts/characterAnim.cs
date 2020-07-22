@@ -6,10 +6,12 @@ public class characterAnim : MonoBehaviour
 {
 
     private Animator anim;
+    GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
+        Player = gameObject;
         anim = GetComponent<Animator>();
     }
 
@@ -21,12 +23,9 @@ public class characterAnim : MonoBehaviour
         } else {
             anim.SetBool("isRunning", false);
         }
-        if (Input.GetKey(KeyCode.UpArrow)) {
+        if (Input.GetKeyDown(KeyCode.UpArrow) &&  Player.GetComponent<Movement>().isGrounded == true) {
             anim.SetTrigger("jump");
             anim.SetBool("isJumping", true);
-            Debug.Log("hola");
-        } else {
-            anim.SetBool("isJumping", false);
         }
     }
 }
