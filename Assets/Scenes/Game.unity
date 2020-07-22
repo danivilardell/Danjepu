@@ -500,6 +500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Matematic
       objectReference: {fileID: 0}
+    - target: {fileID: 3432227179743227956, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: isGrounded
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e7f5e6b0454f4ff5bf0523a9723d483, type: 3}
 --- !u!1 &2144929277

@@ -6,28 +6,25 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpSpeed = 5f;
-    public Animator anim;
     public KeyCode run1;
     public KeyCode run2;
     public KeyCode jump;
+    private Animator anim;
     public bool isGrounded;
     public int doubleJump;
 
     void Start() {
-    	anim.SetTrigger ("stopped");
+        anim = GetComponent<Animator>();
         doubleJump = 2;
     }
 
     void Update()
     {
         transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * speed * Time.deltaTime;
-        if(Input.GetKey(run1) || Input.GetKey(run2)) {
-        	anim.SetTrigger ("run");
-        }
-        else anim.SetTrigger("stopped");
 
         if(Input.GetKeyDown(jump) && doubleJump > 0) {
         	GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
+            anim.SetTrigger("jump");
             doubleJump--;
         }
 
