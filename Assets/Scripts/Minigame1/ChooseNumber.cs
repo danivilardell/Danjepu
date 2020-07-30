@@ -6,15 +6,16 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class ChooseNumber : MonoBehaviour
 {
-	
+	#if UNITY_EDITOR
 	[SerializeField] private int number;
 	private bool isPrime;
 	[SerializeField] private Text txt;	
 
-	void Start() {
+	void Update() {
 		isPrime = isPrimeNum(number);
 		transform.GetChild(1).GetComponent<PlatformBounce>().esPrimer = isPrime;
 		txt.text = number.ToString();
+		transform.GetChild(1).GetComponent<PlatformBounce>().StartGame();
 	}
 
     private bool isPrimeNum(int a) {
@@ -24,4 +25,5 @@ public class ChooseNumber : MonoBehaviour
     	}
     	return true;
     }
+    #endif
 }

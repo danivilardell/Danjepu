@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Pit
   - Grounded
+  - Plataforma
   layers:
   - Default
   - TransparentFX

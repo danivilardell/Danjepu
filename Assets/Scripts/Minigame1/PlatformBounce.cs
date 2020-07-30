@@ -9,20 +9,21 @@ public class PlatformBounce : MonoBehaviour
     private Animator anim;
     public bool esPrimer;
 
-    void Start() {
+    public void StartGame() {
     	anim = GameObject.Find("Matematic").GetComponent<Animator>();
     	if(!esPrimer) {
-    		transform.GetComponent<Collider2D>().enabled = false;
+            Debug.Log("hola");
+    		GetComponent<Collider2D>().enabled = false;
     	}
+        else GetComponent<Collider2D>().enabled = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("hola2");
     	if(collision.gameObject.tag == "Grounded" && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0) {
-            Debug.Log("hola3");
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
 	    	anim.SetTrigger("jump");
 	    	anim.SetBool("isJumping", true);
+            collision.gameObject.GetComponent<MovementWithNoJump>().camPos += new Vector3(0,1,0);
 	    }
 	
     }
