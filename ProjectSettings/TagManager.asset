@@ -8,6 +8,7 @@ TagManager:
   - Moneda
   - Enemy
   - Pit
+  - Grounded
   layers:
   - Default
   - TransparentFX
