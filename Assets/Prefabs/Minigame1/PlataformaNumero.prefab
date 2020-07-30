@@ -360,8 +360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db6a3e103b084d479dfefd162411d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 8.3
+  jumpSpeed: 9
   esPrimer: 1
+  controller: {fileID: 6545290855091692509, guid: 409ab8ece08bb4338a22bcae42a3a698,
+    type: 3}
 --- !u!251 &2658799284839811662
 PlatformEffector2D:
   m_ObjectHideFlags: 0

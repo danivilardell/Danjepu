@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ChooseNumber : MonoBehaviour
 {
 	#if UNITY_EDITOR
-	[SerializeField] private int number;
+	[SerializeField] public int number;
 	private bool isPrime;
 	[SerializeField] private Text txt;	
 
