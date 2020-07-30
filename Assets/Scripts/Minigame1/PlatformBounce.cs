@@ -25,7 +25,7 @@ public class PlatformBounce : MonoBehaviour
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
 	    	anim.SetTrigger("jump");
 	    	anim.SetBool("isJumping", true);
-            collision.gameObject.GetComponent<MovementWithNoJump>().camPos += new Vector3(0,1,0);
+            collision.gameObject.GetComponent<MovementWithNoJump>().camPos += new Vector3(0,1.5f,0);
             controller.GetComponent<MapGenerator>().creaPlataformes();
 
 	    }
