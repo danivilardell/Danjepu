@@ -771,18 +771,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 151571936}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1431754865 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3976305616708392772, guid: 21f5afe05c0437346a73260e2c7cb78f,
-    type: 3}
-  m_PrefabInstance: {fileID: 151571936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919d3340a444d94409a89a81b27ce216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1498643716
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,18 +898,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: Matematic
       objectReference: {fileID: 0}
+    - target: {fileID: 3379645091763192192, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.9233742
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379645091763192192, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.4884377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183378509788223366, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 2.5985785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183378509788223366, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 8.765467
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183378509788223366, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884629081133342127, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8302208615212891252, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 1431754865}
-    - target: {fileID: 8302208615212891252, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
-        type: 3}
-      propertyPath: respown
-      value: 
-      objectReference: {fileID: 1199247628}
+      objectReference: {fileID: 1639679825}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e7f5e6b0454f4ff5bf0523a9723d483, type: 3}
+--- !u!114 &1639679825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3976305616708392772, guid: 21f5afe05c0437346a73260e2c7cb78f,
+    type: 3}
+  m_PrefabInstance: {fileID: 151571936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919d3340a444d94409a89a81b27ce216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734441396
 GameObject:
   m_ObjectHideFlags: 0

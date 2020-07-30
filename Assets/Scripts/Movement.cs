@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
         if(Input.GetKeyDown(jump) && doubleJump > 0) {
         	GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
             anim.SetTrigger("jump");
+            anim.SetBool("isJumping", true);
             doubleJump--;
         }
 
