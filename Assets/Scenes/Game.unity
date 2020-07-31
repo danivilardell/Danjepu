@@ -933,6 +933,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1639679825}
+    - target: {fileID: 8302208615212891252, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
+        type: 3}
+      propertyPath: respown
+      value: 
+      objectReference: {fileID: 1199247628}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e7f5e6b0454f4ff5bf0523a9723d483, type: 3}
 --- !u!114 &1639679825 stripped

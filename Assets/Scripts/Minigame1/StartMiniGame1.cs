@@ -6,10 +6,13 @@ public class StartMiniGame1 : MonoBehaviour
 {
     
     public KeyCode start;
-    private bool started;
+    public bool started;
     [SerializeField] GameObject startText;
+    [SerializeField] GameObject puntuador;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject mapMove;
     [SerializeField] private float initialJumpSpeed;
+
 
     void Start() {
     	started = false;
@@ -18,9 +21,12 @@ public class StartMiniGame1 : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(start) && !started) {
-        	started = true;
+            MapGenerator.CONTADOR = 0;
+        	started = true;    
         	startText.SetActive(false);
+            puntuador.SetActive(true);
             player.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, initialJumpSpeed),  ForceMode2D.Impulse);
+            mapMove.GetComponent<MapMove>().started = true;
         }
     }
 }

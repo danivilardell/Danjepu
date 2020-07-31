@@ -22,10 +22,10 @@ public class PlatformBounce : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
     	if(collision.gameObject.tag == "Grounded" && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0 && inGame) {
+            collision.transform.GetComponent<ContadorPunts>().CanviaPunts(transform.parent.transform.position.y);
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
 	    	anim.SetTrigger("jump");
 	    	anim.SetBool("isJumping", true);
-            collision.gameObject.GetComponent<MovementWithNoJump>().camPos += new Vector3(0,1.5f,0);
             controller.GetComponent<MapGenerator>().creaPlataformes();
 
 	    }
