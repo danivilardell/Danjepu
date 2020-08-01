@@ -24,6 +24,7 @@ public class PlatformBounce : MonoBehaviour
     	if(collision.gameObject.tag == "Grounded" && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0 && inGame) {
             collision.transform.GetComponent<ContadorPunts>().CanviaPunts(transform.parent.transform.position.y);
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
+            anim.SetBool("isJumping", false);
 	    	anim.SetTrigger("jump");
 	    	anim.SetBool("isJumping", true);
             controller.GetComponent<MapGenerator>().creaPlataformes();

@@ -12,10 +12,12 @@ public class StartMiniGame1 : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject mapMove;
     [SerializeField] private float initialJumpSpeed;
+    private Animator anim;
 
 
     void Start() {
     	started = false;
+        anim = player.GetComponent<Animator>();
     }
 
     void Update()
@@ -25,6 +27,8 @@ public class StartMiniGame1 : MonoBehaviour
         	started = true;    
         	startText.SetActive(false);
             puntuador.SetActive(true);
+            anim.SetTrigger("jump");
+            anim.SetBool("isJumping", true);
             player.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, initialJumpSpeed),  ForceMode2D.Impulse);
             mapMove.GetComponent<MapMove>().started = true;
         }

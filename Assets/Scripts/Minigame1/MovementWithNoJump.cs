@@ -28,6 +28,7 @@ public class MovementWithNoJump : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Enemy") {
             endPanel.SetActive(true);
+            anim.SetBool("isJumping", false);
             inGame = false;
             PlatformBounce.INGAME = false;
         }
