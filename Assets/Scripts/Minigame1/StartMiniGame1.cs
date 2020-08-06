@@ -24,9 +24,16 @@ public class StartMiniGame1 : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(start) && !started) {
-            MapGenerator.CONTADOR = 0;
-            MapGenerator.INTERVAL = 50;
-            MapGenerator.NUMEROBASE = 2;
+            if(!DisplayHighscore.ISLEGENDARY) {
+                MapGenerator.CONTADOR = 0;
+                MapGenerator.INTERVAL = 50;
+                MapGenerator.NUMEROBASE = 2;
+            }
+            else {
+                MapGenerator.CONTADOR = 0;
+                MapGenerator.INTERVAL = 200;
+                MapGenerator.NUMEROBASE = 100;
+            }
             MapGenerator.IT = 1;
             player.GetComponent<ContadorPunts>().Start();
             highscore.GetComponent<DisplayHighscore>().StartGame();

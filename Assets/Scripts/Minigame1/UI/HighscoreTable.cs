@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class HighscoreTable : MonoBehaviour
 {
-    const string privateCode = "VDuAQcGxeE28ukTKpSQ54g-50LOBNDsEuR7Ct0j5ucJQ";
-    const string publicCode = "5f2bfe05eb371809c4b0c74e";
-    const string webURL = "http://dreamlo.com/lb/";
+    private string privateCode = "VDuAQcGxeE28ukTKpSQ54g-50LOBNDsEuR7Ct0j5ucJQ";
+    private string publicCode = "5f2bfe05eb371809c4b0c74e";
+    private string webURL = "http://dreamlo.com/lb/";
 
     public Highscore[] highscoreList;
+    public Highscore[] highscoreListLeg;
     static HighscoreTable instance;
     DisplayHighscore highscoresDisplay;
 
@@ -43,23 +44,55 @@ public class HighscoreTable : MonoBehaviour
 
     	if(string.IsNullOrEmpty(www.error)) {
             FormatHighscores(www.text);
-            highscoresDisplay.OnHighscoresDownloaded(highscoreList);
+            if(DisplayHighscore.ISLEGENDARY) highscoresDisplay.OnHighscoresDownloaded(highscoreList);
+            else highscoresDisplay.OnHighscoresDownloaded(highscoreListLeg);
         }
     	else print ("Error Downloading: " + www.error);
     }
 
     void FormatHighscores(string textStream) {
-    	string[] entries = textStream.Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
-    	highscoreList = new Highscore[entries.Length];
+        if(DisplayHighscore.ISLEGENDARY) {
+            string[] entries = textStream.Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            highscoreList = new Highscore[entries.Length];
 
-    	for(int i = 0; i < entries.Length; i++) {
-    		string[] entryInfo = entries[i].Split(new char[] {'|'});
-    		string username = entryInfo[0];
-    		int score = int.Parse(entryInfo[1]);
-    		highscoreList[i] = new Highscore(username, score);
-    		print (highscoreList[i].username + ":" + highscoreList[i].score);
-    	}
+            for(int i = 0; i < entries.Length; i++) {
+                string[] entryInfo = entries[i].Split(new char[] {'|'});
+                string username = entryInfo[0];
+                int score = int.Parse(entryInfo[1]);
+                highscoreList[i] = new Highscore(username, score);
+                print (highscoreList[i].username + ":" + highscoreList[i].score);
+            }
+        }
+        else {
+            string[] entries = textStream.Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
+            highscoreListLeg = new Highscore[entries.Length];
+
+            for(int i = 0; i < entries.Length; i++) {
+                string[] entryInfo = entries[i].Split(new char[] {'|'});
+                string username = entryInfo[0];
+                int score = int.Parse(entryInfo[1]);
+                highscoreListLeg[i] = new Highscore(username, score);
+                print (highscoreListLeg[i].username + ":" + highscoreListLeg[i].score);
+            }
+        }
+    	
     }
+
+    public void isLegendary(bool isLeg) {
+        if(isLeg) {
+            privateCode = "R0OinHankkGzNxlmSalNFgSB1wWOsri06QoDArSoxplw";
+            publicCode = "5f2c4b94eb371809c4b18470";
+            webURL = "http://dreamlo.com/lb/";
+        }
+        else {
+            privateCode = "VDuAQcGxeE28ukTKpSQ54g-50LOBNDsEuR7Ct0j5ucJQ";
+            publicCode = "5f2bfe05eb371809c4b0c74e";
+            webURL = "http://dreamlo.com/lb/";
+        }
+
+    }
+
+
 }
 
 public struct Highscore {

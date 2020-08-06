@@ -7,9 +7,11 @@ public class DisplayHighscore : MonoBehaviour
 {
 	public GameObject[] highscoreText;
 	HighscoreTable highscoreManager;
+  public static bool isLegendary;
     
     void Start()
     {
+      isLegendary = false;
        	for (int i = 0; i < highscoreText.Length; i++) {
        		highscoreText[i].transform.GetChild(1).transform.GetComponent<Text>().text = "Fetching...";
        		highscoreText[i].transform.GetChild(2).transform.GetComponent<Text>().text = "...";
@@ -41,5 +43,26 @@ public class DisplayHighscore : MonoBehaviour
     		highscoreManager.DownloadHighScores();
     		yield return new WaitForSeconds(30);
     	}
+    }
+
+    public void viewLeg(bool isLeg) {
+      bool aux = isLegendary;
+      isLegendary = isLeg;
+      highscoreManager.isLegendary(isLeg);
+      highscoreManager.DownloadHighScores();
+      isLegendary = aux;
+    }
+
+    public void isLeg (bool isLeg) {
+        isLegendary = isLeg;
+    }
+
+    public static bool ISLEGENDARY {
+        get {
+            return isLegendary;
+        }
+        set {
+            isLegendary = value;
+        }
     }
 }

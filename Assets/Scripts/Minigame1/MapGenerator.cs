@@ -19,9 +19,16 @@ public class MapGenerator : MonoBehaviour
 	public static  int it = 1;
 
 	public void Restart() {
-		contador = 0;
-		interval = 50;
-		numeroBase = 2;
+		if(!DisplayHighscore.ISLEGENDARY) {
+			contador = 0;
+			interval = 50;
+			numeroBase = 2;
+		}
+		else {
+			contador = 0;
+			interval = 200;
+			numeroBase = 100;
+		}
 	}
 
 	public void creaPlataformes() {
@@ -60,11 +67,17 @@ public class MapGenerator : MonoBehaviour
 		}
 
 		if(contador%6 == 0 || contador%6 == 1) {
-			interval = (int)1.3 * interval;
-			numeroBase += 10*it;
+			if(!DisplayHighscore.ISLEGENDARY) {
+				interval = (int)1.3 * interval;
+				numeroBase += 10*it;
+			} 
 			Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			it++;
+		}
+		if(contador%4 == 0 || contador%4 == 1 && DisplayHighscore.ISLEGENDARY) {
+			interval = (int)1.7 * interval;
+			numeroBase += 30*it;
 		}
 
 	}

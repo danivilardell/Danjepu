@@ -29,6 +29,7 @@ public class MovementWithNoJump : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Enemy") {
+            if(DisplayHighscore.ISLEGENDARY) 
             HighscoreTable.AddNewHighscore(playername.text, transform.GetComponent<ContadorPunts>().punts);
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
