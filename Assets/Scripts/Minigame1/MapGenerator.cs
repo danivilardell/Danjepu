@@ -6,25 +6,27 @@ public class MapGenerator : MonoBehaviour
 {
 
 	public Transform prefab;
+	[SerializeField] private Transform prefabWallR;
+	public Transform prefabWallL;
 	private int interval = 100;
 	private int numeroBase = 7;
 	[SerializeField] public int initheight;
+	[SerializeField] public float initheightWall = 22.26f;
 	public static int contador = 0;
 	private bool prime;
 	private int randomNum;
 	private float[] posicions = {0f, 0f, 0f};
+	public static  int it = 1;
 
 	public void Restart() {
 		contador = 0;
-		Debug.Log(contador);
 	}
 
 	public void creaPlataformes() {
-		Debug.Log(contador);
 		for(int i = 0; i < 2; i++) {
 			prime = false;
 			System.Random r = new System.Random();
-			randomNum = r.Next(numeroBase, numeroBase + 100);
+			randomNum = r.Next(numeroBase, numeroBase + interval);
 			if(isPrimeNum(randomNum)) prime = true;
 			prefab.gameObject.GetComponent<ChooseNumber>().number = randomNum;
 			posicions[0] = Random.Range(-8.5f, 8.5f);
@@ -32,7 +34,7 @@ public class MapGenerator : MonoBehaviour
 
 
 
-			randomNum = r.Next(numeroBase, numeroBase + 100);
+			randomNum = r.Next(numeroBase, numeroBase + interval);
 			if(isPrimeNum(randomNum)) prime = true;
 			prefab.gameObject.GetComponent<ChooseNumber>().number = randomNum;
 			posicions[1] = Random.Range(-8.5f, 8.5f);
@@ -42,9 +44,9 @@ public class MapGenerator : MonoBehaviour
 			Instantiate(prefab, new Vector3(posicions[1], initheight + contador, 0), Quaternion.identity).transform.parent = GameObject.Find("PlataformesNoves").transform;
 
 
-			randomNum = r.Next(numeroBase, numeroBase + 100);
+			randomNum = r.Next(numeroBase, numeroBase + interval);
 			while(!isPrimeNum(randomNum) && !prime) {
-				randomNum = r.Next(numeroBase, numeroBase + 100);
+				randomNum = r.Next(numeroBase, numeroBase + interval);
 			}
 			prefab.gameObject.GetComponent<ChooseNumber>().number = randomNum;
 			posicions[2] = Random.Range(-8.5f, 8.5f);
@@ -54,6 +56,13 @@ public class MapGenerator : MonoBehaviour
 			Instantiate(prefab, new Vector3(posicions[2], initheight + contador, 0), Quaternion.identity).transform.parent = GameObject.Find("PlataformesNoves").transform;
 			contador += 2;
 		}
+
+		if(contador%6 == 0 || contador%6 == 1) {
+			Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
+			Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
+			it++;
+		}
+
 	}
 
 	private bool isPrimeNum(int a) {
@@ -70,6 +79,15 @@ public class MapGenerator : MonoBehaviour
         }
         set {
             contador = value;
+        }
+    }
+
+    public static int IT {
+        get {
+            return it;
+        }
+        set {
+            it = value;
         }
     }
 }

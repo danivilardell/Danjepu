@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: 32
+  started: 0
   startText: {fileID: 0}
+  puntuador: {fileID: 0}
   player: {fileID: 0}
+  mapMove: {fileID: 0}
   initialJumpSpeed: 8
 --- !u!114 &6545290855091692496
 MonoBehaviour:
@@ -61,5 +64,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3744087731890124508, guid: dd0980c9c8ad24de4a0abc02459ad665, type: 3}
+  prefabWallR: {fileID: 5156046888824779582, guid: 3bce40b66ff2d4971b20ea86216428c9,
+    type: 3}
+  prefabWallL: {fileID: 6186415916413149319, guid: 6cbecf2d27d6e46c5bc671c2643bfddb,
+    type: 3}
   initheight: 8
-  contador: 0
+  initheightWall: 22.26
