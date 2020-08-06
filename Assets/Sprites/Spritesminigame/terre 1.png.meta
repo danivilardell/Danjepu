@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 033c43f8c49a24a5b9f16ceb7652d729
+guid: 3aa5b3efc366f41c69613b7e7ba88f87
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7406942029938530496
-    second: terre_0
-  - first:
-      213: -8363099685342429081
-    second: terre_1
-  - first:
-      213: -5521176692378555730
-    second: terre_2
+      213: 4102777147369604562
+    second: terre 1_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.48630056, y: 0.6589912}
+  spritePivot: {x: 0.5, y: 0.32090646}
   spritePixelsToUnits: 115
-  spriteBorder: {x: 223, y: 1267, z: 297, w: 616}
+  spriteBorder: {x: 238, y: 42, z: 238, w: 1142}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -94,7 +88,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: terre 1_0
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 57
+        width: 2224
+        height: 994
+      alignment: 9
+      pivot: {x: 0.49835765, y: 0.69842964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d54e8df31effe830800000000000000
+      internalID: 4102777147369604562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
