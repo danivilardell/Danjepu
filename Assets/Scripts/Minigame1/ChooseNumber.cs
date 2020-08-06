@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class ChooseNumber : MonoBehaviour
 {
-	#if UNITY_EDITOR
+	//#if UNITY_EDITOR
 	[SerializeField] public int number;
 	private bool isPrime;
 	[SerializeField] private Text txt;	
@@ -25,5 +25,5 @@ public class ChooseNumber : MonoBehaviour
     	}
     	return true;
     }
-    #endif
+    //#endif
 }
