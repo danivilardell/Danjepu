@@ -22,5 +22,6 @@ public class Controller : MonoBehaviour
  	 	canvas.SetActive(false);
  	 	transform.GetComponent<StartMiniGame1>().started = false;
  	 	jugador.GetComponent<MovementWithNoJump>().inGame = true;
+ 	 	jugador.GetComponent<ContadorPunts>().Start();
     }
 }

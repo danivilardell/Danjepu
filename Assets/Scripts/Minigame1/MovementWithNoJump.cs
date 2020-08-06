@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementWithNoJump : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MovementWithNoJump : MonoBehaviour
     private Animator anim;
     private float moveSpeed = 5f;
     public bool inGame;
+    public InputField playername;
 
 
     void Start() {
@@ -27,6 +29,7 @@ public class MovementWithNoJump : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Enemy") {
+            HighscoreTable.AddNewHighscore(playername.text, transform.GetComponent<ContadorPunts>().punts);
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
             inGame = false;

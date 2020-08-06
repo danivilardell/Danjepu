@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  endPanel: {fileID: 0}
+  controller: {fileID: 0}
   run1: 275
   run2m: 276
+  inGame: 0
+  playername: {fileID: 2436863571322392196, guid: bc7c5f571153a48cfb515af248d50730,
+    type: 3}
 --- !u!114 &588288136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 2743900985279710686, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
         type: 3}
       propertyPath: m_Name
-      value: Matematic
+      value: MatematicMiniJoc1
       objectReference: {fileID: 0}
     - target: {fileID: 8302208615212891252, guid: 1e7f5e6b0454f4ff5bf0523a9723d483,
         type: 3}

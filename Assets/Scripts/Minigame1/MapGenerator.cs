@@ -8,8 +8,8 @@ public class MapGenerator : MonoBehaviour
 	public Transform prefab;
 	[SerializeField] private Transform prefabWallR;
 	public Transform prefabWallL;
-	private int interval = 100;
-	private int numeroBase = 7;
+	public static int interval = 50;
+	public static int numeroBase = 2;
 	[SerializeField] public int initheight;
 	[SerializeField] public float initheightWall = 22.26f;
 	public static int contador = 0;
@@ -20,6 +20,8 @@ public class MapGenerator : MonoBehaviour
 
 	public void Restart() {
 		contador = 0;
+		interval = 50;
+		numeroBase = 2;
 	}
 
 	public void creaPlataformes() {
@@ -58,6 +60,8 @@ public class MapGenerator : MonoBehaviour
 		}
 
 		if(contador%6 == 0 || contador%6 == 1) {
+			interval = (int)1.3 * interval;
+			numeroBase += 10*it;
 			Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			it++;
@@ -88,6 +92,24 @@ public class MapGenerator : MonoBehaviour
         }
         set {
             it = value;
+        }
+    }
+
+    public static int INTERVAL {
+        get {
+            return interval;
+        }
+        set {
+            interval = value;
+        }
+    }
+
+    public static int NUMEROBASE {
+        get {
+            return numeroBase;
+        }
+        set {
+            numeroBase = value;
         }
     }
 }
