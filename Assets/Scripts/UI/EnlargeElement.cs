@@ -8,8 +8,7 @@ public class EnlargeElement : MonoBehaviour, IPointerEnterHandler, IPointerExitH
      Vector3 cachedScale;
  
      void Start() {
- 
-         cachedScale = transform.localScale;
+            cachedScale = transform.localScale;
      }
  
      public void OnPointerEnter(PointerEventData eventData) {
