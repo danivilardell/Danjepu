@@ -27,6 +27,7 @@ public class StartMiniGame1 : MonoBehaviour
             MapGenerator.CONTADOR = 0;
             MapGenerator.INTERVAL = 50;
             MapGenerator.NUMEROBASE = 2;
+            MapGenerator.IT = 1;
             player.GetComponent<ContadorPunts>().Start();
             highscore.GetComponent<DisplayHighscore>().StartGame();
         	started = true;    
