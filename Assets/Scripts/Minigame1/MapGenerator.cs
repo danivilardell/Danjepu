@@ -68,8 +68,8 @@ public class MapGenerator : MonoBehaviour
 
 		if(contador%6 == 0 || contador%6 == 1) {
 			if(!DisplayHighscore.ISLEGENDARY) {
-				interval = (int)1.3 * interval;
-				numeroBase += 10*it;
+				interval = (int)(1.2 * interval);
+				numeroBase += 7*it;
 			} 
 			Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
