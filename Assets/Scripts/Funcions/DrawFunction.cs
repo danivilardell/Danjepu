@@ -48,7 +48,7 @@ public class DrawFunction : MonoBehaviour
         float xscale = graph.transform.localScale[0];
         float yscale = graph.transform.localScale[1];
         
-        for (float x = -1f; x <= 1.01f; x += .01f) {
+        for (float x = -8f; x <= 8.01f; x += .01f) {
             exp.Parameters["x"].Value = x; // set the named parameter "x"
             points.Add( new Vector2(x/xscale, (float) (exp.Value)/yscale) );
             //points.Add( new Vector2(i/xscale, (i*i)/yscale) );
@@ -64,8 +64,16 @@ public class DrawFunction : MonoBehaviour
         // amb el collider simplement es pot fer aixo
         col.points = points.ToArray();
         // amb el line renderer, com que es 3D sembla que s'ha de fer aquest arreglo
-        int j = points.Count;
-        line.positionCount = j;
-        for (int i = 0; i < j; ++i) line.SetPosition(i, points[i]);
+        StartCoroutine(DrawGradually());
     }
+
+    public IEnumerator DrawGradually() {
+        int j = points.Count;
+        for (int i = 0; i < j; ++i) {
+            line.positionCount = i + 1;
+            line.SetPosition(i, points[i]);
+            if(i%8 == 0) yield return new WaitForSeconds(0.0001f);
+        }
+    }
+
 }
