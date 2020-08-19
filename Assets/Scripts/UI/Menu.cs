@@ -30,4 +30,8 @@ public class Menu : MonoBehaviour
     public void LoadMinigame(string i) {
         SceneManager.LoadScene("Minigame" + i);
     }
+
+    public void LoadMainMenu() {
+        SceneManager.LoadScene("Menu");
+    }
 }
