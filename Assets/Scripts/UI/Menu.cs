@@ -26,4 +26,8 @@ public class Menu : MonoBehaviour
 
     	SceneManager.LoadScene("Game");
     }
+
+    public void LoadMinigame(string i) {
+        SceneManager.LoadScene("Minigame" + i);
+    }
 }
