@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 369400778}
   - component: {fileID: 369400780}
   - component: {fileID: 369400779}
+  - component: {fileID: 369400781}
   m_Layer: 0
   m_Name: Token
   m_TagString: Carta
@@ -294,7 +295,7 @@ MonoBehaviour:
   matched: 0
   card: {fileID: 369400775}
   waitingTime: 0.5
-  shake: {fileID: 0}
+  shake: {fileID: 369400781}
   isDissolving: 0
 --- !u!114 &369400779
 MonoBehaviour:
@@ -337,6 +338,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.626, y: 2.586}
   m_EdgeRadius: 0
+--- !u!95 &369400781
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369400775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d067f64ac2a69e546add49c86110866b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &835043025
 GameObject:
   m_ObjectHideFlags: 0
