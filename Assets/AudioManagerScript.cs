@@ -42,25 +42,6 @@ public class AudioManagerScript : MonoBehaviour
         PlaySound("Main Theme");
     }
 
-    //Actualizo el volumen del "Main Theme" con las sliders.
-    public void Theme_Volume(float NewVolume)
-    {
-        Sound_Class s = Array.Find(sounds, sound => sound.name == "Main Theme");
-        s.source.volume = NewVolume;
-    }
-
-    //Actualizo el volumen de los efectos de sonido con las sliders.
-    public void Sound_Effects_Volume(float NewVolume)
-    {
-        foreach (Sound_Class s in sounds)
-        {
-            if (s.name != "Main Theme")
-            {
-                s.source.volume = NewVolume;
-            }
-        }
-    }
-
     public void PlaySound(string name)
     {
         Sound_Class s = Array.Find(sounds, sound => sound.name == name);
