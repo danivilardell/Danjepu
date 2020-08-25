@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -608,7 +608,6 @@ GameObject:
   - component: {fileID: 309840394}
   - component: {fileID: 309840393}
   - component: {fileID: 309840392}
-  - component: {fileID: 309840391}
   - component: {fileID: 309840390}
   m_Layer: 5
   m_Name: 1400x1050
@@ -649,21 +648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &309840391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309840388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &309840392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,7 +1283,6 @@ GameObject:
   - component: {fileID: 537350981}
   - component: {fileID: 537350980}
   - component: {fileID: 537350979}
-  - component: {fileID: 537350978}
   - component: {fileID: 537350977}
   m_Layer: 5
   m_Name: Back
@@ -1340,21 +1323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &537350978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537350975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &537350979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +1992,6 @@ GameObject:
   - component: {fileID: 894962605}
   - component: {fileID: 894962604}
   - component: {fileID: 894962603}
-  - component: {fileID: 894962602}
   - component: {fileID: 894962601}
   m_Layer: 5
   m_Name: Resolution
@@ -2065,21 +2032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &894962602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 894962599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &894962603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4070,7 +4022,6 @@ GameObject:
   - component: {fileID: 1562397277}
   - component: {fileID: 1562397276}
   - component: {fileID: 1562397275}
-  - component: {fileID: 1562397274}
   - component: {fileID: 1562397273}
   m_Layer: 5
   m_Name: 1600x1200
@@ -4111,21 +4062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1562397274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562397271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &1562397275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4405,7 +4341,6 @@ GameObject:
   - component: {fileID: 1614244571}
   - component: {fileID: 1614244570}
   - component: {fileID: 1614244569}
-  - component: {fileID: 1614244568}
   - component: {fileID: 1614244567}
   m_Layer: 5
   m_Name: Exit
@@ -4446,21 +4381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1614244568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614244565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &1614244569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4973,7 +4893,6 @@ GameObject:
   - component: {fileID: 1817678936}
   - component: {fileID: 1817678935}
   - component: {fileID: 1817678934}
-  - component: {fileID: 1817678933}
   - component: {fileID: 1817678932}
   m_Layer: 5
   m_Name: 1920x1200
@@ -5014,21 +4933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1817678933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817678930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &1817678934
 MonoBehaviour:
   m_ObjectHideFlags: 0

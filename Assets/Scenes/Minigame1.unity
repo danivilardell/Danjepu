@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -721,7 +721,6 @@ GameObject:
   - component: {fileID: 91704165}
   - component: {fileID: 91704164}
   - component: {fileID: 91704163}
-  - component: {fileID: 91704162}
   - component: {fileID: 91704161}
   m_Layer: 5
   m_Name: Start Game
@@ -762,21 +761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &91704162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91704159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &91704163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3745,7 +3729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1046393916}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
@@ -5150,7 +5134,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046393913}
-  - component: {fileID: 1046393916}
   - component: {fileID: 1046393915}
   - component: {fileID: 1046393914}
   m_Layer: 0
@@ -5200,21 +5183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0
   height: 0
---- !u!114 &1046393916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046393912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 959804049}
-  transition2: {fileID: 408310495}
-  playernameInput: {fileID: 0}
 --- !u!1 &1059029590
 GameObject:
   m_ObjectHideFlags: 0
@@ -6475,7 +6443,6 @@ GameObject:
   - component: {fileID: 1409606311}
   - component: {fileID: 1409606310}
   - component: {fileID: 1409606309}
-  - component: {fileID: 1409606308}
   - component: {fileID: 1409606307}
   m_Layer: 5
   m_Name: Try Again
@@ -6516,21 +6483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1409606308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409606305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &1409606309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8097,7 +8049,6 @@ GameObject:
   - component: {fileID: 1752179345}
   - component: {fileID: 1752179344}
   - component: {fileID: 1752179343}
-  - component: {fileID: 1752179342}
   - component: {fileID: 1752179341}
   m_Layer: 5
   m_Name: Back
@@ -8138,21 +8089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1752179342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752179339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &1752179343
 MonoBehaviour:
   m_ObjectHideFlags: 0
