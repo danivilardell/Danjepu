@@ -24,7 +24,7 @@ public class MainToken : MonoBehaviour
     public void OnMouseDown()
     {
         //Si la carta ya esta emparejada o estamos en el menú de pausa las cartas no deben interactuar.
-        if(!matched && !gameControl.GetComponent<Game_Control>().OptionMenu)
+        if(!matched)
         {
             if (spriteRenderer.sprite == back)
             {
