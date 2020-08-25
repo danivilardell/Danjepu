@@ -98,14 +98,14 @@ public class MainToken : MonoBehaviour
         }
         if (spriteRenderer.sprite == back)
         {
-            shake.SetTrigger("Start_Shake");
+            //shake.SetTrigger("Start_Shake");
         }
     }
 
     private void OnMouseExit()
     {
         card.GetComponent<DropShadow>().shadowGameobject.GetComponent<SpriteRenderer>().sprite = null;
-        shake.SetTrigger("Stop_Shake");
+        //shake.SetTrigger("Stop_Shake");
     }
 
     private void Awake()
