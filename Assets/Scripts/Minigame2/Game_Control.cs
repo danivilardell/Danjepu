@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 public class Game_Control : MonoBehaviour
 {
     GameObject token;
-    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1, 1, 1, 1, 1};
+    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1};
     public static System.Random rnd = new System.Random();
     public int shuffleNum = 0;
     public int[] visibleFaces = { -1, -2 };
@@ -30,9 +30,19 @@ public class Game_Control : MonoBehaviour
     {
         int originalLength = faceindexes.Count;
         TotalMatches = originalLength / 2;
-        float yPosition = 1.5f;
-        float xPosition = -10f;
-        for(int i = 0; i < originalLength - 1; ++i)
+        float yPosition = 4.5f;
+        float xPosition = -5f;
+        for(int i = 0; i < 3; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+        }
+        yPosition = 1.5f;
+        xPosition = -10f;
+        for(int i = 0; i < originalLength - 6; ++i)
         {
             shuffleNum = rnd.Next(0, faceindexes.Count);
             var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
@@ -40,12 +50,23 @@ public class Game_Control : MonoBehaviour
             faceindexes.Remove(faceindexes[shuffleNum]);
             xPosition = xPosition + 5;
             //Esto solo esta preparado para 2 filas de cartas.
-            if(i == originalLength/2 - 2)
+            if(i == originalLength/2 - 4)
             {
-                yPosition = -2f;
+                yPosition = -1.5f;
                 xPosition = -10f;
             }
         }
+        yPosition = -4.5f;
+        xPosition = -5f;
+        for(int i = 0; i < 2; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+        }
+
         token.GetComponent<MainToken>().faceIndex = faceindexes[0];
 
         //Cojo todos los GameObjects de la partida y los pongo en un array.
@@ -199,7 +220,50 @@ public class Game_Control : MonoBehaviour
 
     public void Start02()
     {
+        //Colocar el original en la posición 
+        int originalLength = faceindexes.Count;
+        TotalMatches = originalLength / 2;
+        float yPosition = 4.5f;
+        float xPosition = -5f;
+        for (int i = 0; i < 3; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+        }
+        yPosition = 1.5f;
+        xPosition = -10f;
+        for (int i = 0; i < originalLength - 6; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+            //Esto solo esta preparado para 2 filas de cartas.
+            if (i == originalLength / 2 - 4)
+            {
+                yPosition = -1.5f;
+                xPosition = -10f;
+            }
+        }
+        yPosition = -4.5f;
+        xPosition = -5f;
+        for (int i = 0; i < 2; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+        }
 
+        token.GetComponent<MainToken>().faceIndex = faceindexes[0];
+
+        //Cojo todos los GameObjects de la partida y los pongo en un array.
+        list = GameObject.FindGameObjectsWithTag("Carta");
     }
 
     private void Awake()
