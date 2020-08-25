@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class Game_Control : MonoBehaviour
 {
     GameObject token;
-    List<int> faceindexes = new List<int> { 0, 0};
+    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1};
     public static System.Random rnd = new System.Random();
     public int shuffleNum = 0;
     public int[] visibleFaces = { -1, -2 };
@@ -27,19 +27,19 @@ public class Game_Control : MonoBehaviour
         int originalLength = faceindexes.Count;
         TotalMatches = originalLength / 2;
         float yPosition = 1.5f;
-        float xPosition = -7f;
+        float xPosition = -5f;
         for(int i = 0; i < originalLength - 1; ++i)
         {
             shuffleNum = rnd.Next(0, faceindexes.Count);
             var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
             temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
             faceindexes.Remove(faceindexes[shuffleNum]);
-            xPosition = xPosition + 2;
+            xPosition = xPosition + 5;
             //Esto solo esta preparado para 2 filas de cartas.
             if(i == originalLength/2 - 2)
             {
-                yPosition = -1.5f;
-                xPosition = -7f;
+                yPosition = -2f;
+                xPosition = -5f;
             }
         }
         token.GetComponent<MainToken>().faceIndex = faceindexes[0];
