@@ -50,7 +50,7 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 7880518280883d043975db8f57d11598, type: 3}
+  - clip: {fileID: 8300000, guid: ed0b9186ba3729f4597d1efe0a157878, type: 3}
     name: Ouch
     volume: 1
     pitch: 1
