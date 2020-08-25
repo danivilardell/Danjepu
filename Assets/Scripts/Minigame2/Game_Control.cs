@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,7 +11,7 @@ using UnityEngine.UIElements;
 public class Game_Control : MonoBehaviour
 {
     GameObject token;
-    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1, 1, 1};
+    List<int> faceindexes = new List<int> {0, 1, 2, 3};
     public static System.Random rnd = new System.Random();
     public int shuffleNum = 0;
     public int[] visibleFaces = { -1, -2 };
@@ -90,15 +91,17 @@ public class Game_Control : MonoBehaviour
 
     public bool CheckMatch()
     {
-        if(visibleFaces[0] == visibleFaces[1])
+        if(Math.Abs(visibleFaces[0] - visibleFaces[1]) == 1)
         {
-            //FindObjectOfType<AudioManagerScript>().PlaySound("Campanilla");
-            visibleFaces[0] = -1;
-            visibleFaces[1] = -2;
-            ++matches;
-            return true;
+            if(visibleFaces[0]%2 == 0 && visibleFaces[0] < visibleFaces[1])
+            {
+                //FindObjectOfType<AudioManagerScript>().PlaySound("Campanilla");
+                visibleFaces[0] = -1;
+                visibleFaces[1] = -2;
+                return true;
+            }
         }
-
+            
         return false;
     }
 

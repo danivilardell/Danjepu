@@ -13,7 +13,7 @@ public class MainToken : MonoBehaviour
     public bool matched = false;
 
     public GameObject card;
-    public float waitingTime = 0.5f;
+    public float waitingTime = 0.75f;
 
     public Animator shake;
 
