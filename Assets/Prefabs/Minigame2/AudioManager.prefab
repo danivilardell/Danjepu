@@ -56,3 +56,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: dce2de76230531c4f8c78cf6b8191672, type: 3}
+    name: Boing
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

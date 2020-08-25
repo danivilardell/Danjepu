@@ -30,7 +30,8 @@ public class PlatformBounce : MonoBehaviour
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
             anim.SetBool("isJumping", false);
 	    	anim.SetTrigger("jump");
-	    	anim.SetBool("isJumping", true);
+            FindObjectOfType<AudioManagerScript>().PlaySound("Boing");
+            anim.SetBool("isJumping", true);
             controller.GetComponent<MapGenerator>().creaPlataformes();
 
 	    }
