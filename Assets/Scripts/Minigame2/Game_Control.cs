@@ -4,10 +4,13 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+//Hacer que los 9 niveles pasen por este código. Poner un tutorial. 
+
 public class Game_Control : MonoBehaviour
 {
     GameObject token;
-    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1};
+    List<int> faceindexes = new List<int> {0, 0, 0, 0, 1, 1, 1, 1, 1, 1};
     public static System.Random rnd = new System.Random();
     public int shuffleNum = 0;
     public int[] visibleFaces = { -1, -2 };
@@ -18,16 +21,17 @@ public class Game_Control : MonoBehaviour
 
     public int matches = 0;
     public int TotalMatches;
-    public GameObject completeLevelUI;
 
-    public bool OptionMenu = false;
+    //Quizá no poner esto en el Start y llamarlo a cada nivel. Poner un faceindexes para cada nivel.
+    //Poner la posición inicial para las cartas en función de la cantidad de ellas.
+    //Limpiar visibleFaces una vez se cambie de nivel.
 
     void Start()
     {
         int originalLength = faceindexes.Count;
         TotalMatches = originalLength / 2;
         float yPosition = 1.5f;
-        float xPosition = -5f;
+        float xPosition = -10f;
         for(int i = 0; i < originalLength - 1; ++i)
         {
             shuffleNum = rnd.Next(0, faceindexes.Count);
@@ -39,7 +43,7 @@ public class Game_Control : MonoBehaviour
             if(i == originalLength/2 - 2)
             {
                 yPosition = -2f;
-                xPosition = -5f;
+                xPosition = -10f;
             }
         }
         token.GetComponent<MainToken>().faceIndex = faceindexes[0];
@@ -132,6 +136,69 @@ public class Game_Control : MonoBehaviour
 
         //Al activar "completeLevelUI" se dispara su transición y esta activa el cambio de escena al final.
         //completeLevelUI.SetActive(true);
+
+        //Volver al "menu" de niveles.
+
+        Debug.Log("Congrats!");
+
+    }
+
+    public void Start00()
+    {
+        //Puedo obligar a que el toquen original esté en una posición concreta. (x = 5)
+        int originalLength = faceindexes.Count;
+        TotalMatches = originalLength / 2;
+        float yPosition = 1.5f;
+        float xPosition = -5f;
+        for (int i = 0; i < originalLength - 1; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+            //Esto solo esta preparado para 2 filas de cartas.
+            if (i == originalLength / 2 - 2)
+            {
+                yPosition = -2f;
+                xPosition = -5f;
+            }
+        }
+        token.GetComponent<MainToken>().faceIndex = faceindexes[0];
+
+        //Cojo todos los GameObjects de la partida y los pongo en un array.
+        list = GameObject.FindGameObjectsWithTag("Carta");
+    }
+
+    public void Start01()
+    {
+        //Poner en una posición concreta el token original (x = 10)
+        int originalLength = faceindexes.Count;
+        TotalMatches = originalLength / 2;
+        float yPosition = 1.5f;
+        float xPosition = -10f;
+        for (int i = 0; i < originalLength - 1; ++i)
+        {
+            shuffleNum = rnd.Next(0, faceindexes.Count);
+            var temp = Instantiate(token, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+            temp.GetComponent<MainToken>().faceIndex = faceindexes[shuffleNum];
+            faceindexes.Remove(faceindexes[shuffleNum]);
+            xPosition = xPosition + 5;
+            //Esto solo esta preparado para 2 filas de cartas.
+            if (i == originalLength / 2 - 2)
+            {
+                yPosition = -2f;
+                xPosition = -10f;
+            }
+        }
+        token.GetComponent<MainToken>().faceIndex = faceindexes[0];
+
+        //Cojo todos los GameObjects de la partida y los pongo en un array.
+        list = GameObject.FindGameObjectsWithTag("Carta");
+    }
+
+    public void Start02()
+    {
 
     }
 
