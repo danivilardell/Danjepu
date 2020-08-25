@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MovementWithNoJump : MonoBehaviour
 {
@@ -32,10 +33,14 @@ public class MovementWithNoJump : MonoBehaviour
             
             HighscoreTable.AddNewHighscore(Menu.PLAYERNAME, transform.GetComponent<ContadorPunts>().punts);
 
+            //Poner animación de fade para el panel final.
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
-            inGame = false;
             FindObjectOfType<AudioManagerScript>().PlaySound("Ouch");
+            //gameObject.transform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, 10f), ForceMode2D.Impulse);
+            anim.SetTrigger("Death");
+            inGame = false;
         }
     }
 
