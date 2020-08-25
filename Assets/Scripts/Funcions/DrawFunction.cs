@@ -72,7 +72,7 @@ public class DrawFunction : MonoBehaviour
         for (int i = 0; i < j; ++i) {
             line.positionCount = i + 1;
             line.SetPosition(i, points[i]);
-            if(i%8 == 0) yield return new WaitForSeconds(0.0001f);
+            if(i%16 == 0) yield return new WaitForSeconds(0.0001f);
         }
     }
 
