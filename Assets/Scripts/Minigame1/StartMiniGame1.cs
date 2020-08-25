@@ -12,6 +12,7 @@ public class StartMiniGame1 : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject mapMove;
     [SerializeField] GameObject highscore;
+    [SerializeField] GameObject reglas;
     [SerializeField] private float initialJumpSpeed;
     private Animator anim;
 
@@ -19,6 +20,7 @@ public class StartMiniGame1 : MonoBehaviour
     void Start() {
     	started = false;
         anim = player.GetComponent<Animator>();
+        reglas.SetActive(true);
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class StartMiniGame1 : MonoBehaviour
                 MapGenerator.INTERVAL = 200;
                 MapGenerator.NUMEROBASE = 100;
             }
+            reglas.SetActive(false);
             MapGenerator.IT = 1;
             player.GetComponent<ContadorPunts>().Start();
             highscore.GetComponent<DisplayHighscore>().StartGame();
