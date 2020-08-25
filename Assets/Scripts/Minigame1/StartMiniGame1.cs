@@ -25,9 +25,9 @@ public class StartMiniGame1 : MonoBehaviour
     {
         if(Input.GetKeyDown(start) && !started) {
             if(!DisplayHighscore.ISLEGENDARY) {
-                MapGenerator.CONTADOR = 0;
+                MapGenerator.CONTADOR = 4;
                 MapGenerator.INTERVAL = 50;
-                MapGenerator.NUMEROBASE = 2;
+                MapGenerator.NUMEROBASE = 4;
             }
             else {
                 MapGenerator.CONTADOR = 0;
