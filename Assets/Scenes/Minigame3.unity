@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3829,18 +3829,18 @@ RectTransform:
   m_GameObject: {fileID: 1474081138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6975, y: 0.6975, z: 0.6975}
+  m_LocalScale: {x: 0.9858657, y: 0.9858657, z: 0.9858657}
   m_Children:
   - {fileID: 1509950777}
   - {fileID: 1921030858}
   - {fileID: 363936338}
   - {fileID: 26554894}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1945452961}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 269.6798}
+  m_AnchoredPosition: {x: 165.37102, y: 128.5881}
   m_SizeDelta: {x: 309.63522, y: 769.3168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1505897405
@@ -5657,7 +5657,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1474081139}
   m_Father: {fileID: 1654120198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
