@@ -104,16 +104,16 @@ public class MapGenerator : MonoBehaviour
 			contador += 2;
 		}
 
-		if(contador%6 == 0 || contador%6 == 1) {
+		if(contador%12 == 0 || contador%12 == 1) {
 			if(!DisplayHighscore.ISLEGENDARY) {
 				interval = (int)(1.2 * interval);
-				numeroBase += 7*it;
+				numeroBase += 4*it;
 			} 
 			Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 			it++;
 		}
-		if(contador%4 == 0 || contador%4 == 1 && DisplayHighscore.ISLEGENDARY) {
+		if(contador%6 == 0 || contador%6 == 1 && DisplayHighscore.ISLEGENDARY) {
 			interval = (int)1.7 * interval;
 			numeroBase += 30*it;
 		}
