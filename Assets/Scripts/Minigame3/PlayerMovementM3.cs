@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerMovementM3 : MonoBehaviour
 {
-	private float jumpSpeed = 10;
+	private float jumpSpeed = 20;
+    private bool started;
+
+    void Start() {
+        started = false;
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -22,5 +27,12 @@ public class PlayerMovementM3 : MonoBehaviour
 	    if(col.gameObject.tag == "Bounce"){
 	    	transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Sin(col.transform.rotation.z)*jumpSpeed, Mathf.Cos(col.transform.rotation.z)*jumpSpeed),  ForceMode2D.Impulse);
     	}
+    }
+
+    public void StartPush() {
+        if(!started) {
+            transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(2f, 0f),  ForceMode2D.Impulse);
+            started = true;
+        }
     }
 }
