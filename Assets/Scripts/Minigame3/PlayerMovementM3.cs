@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementM3 : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     void OnTriggerEnter(Collider col) {
     	Debug.Log("hola");
