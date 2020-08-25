@@ -9,10 +9,13 @@ public class PlatformBounce : MonoBehaviour
     private Animator anim;
     public bool esPrimer;
     [SerializeField] GameObject controller;
-    public static bool inGame;
+    public GameObject player;
+
+    void Start() {
+        player = GameObject.Find("/Matematic");
+    }
 
     public void StartGame() {
-        inGame = true;
     	anim = GameObject.Find("Matematic").GetComponent<Animator>();
     	if(!esPrimer) {
     		GetComponent<Collider2D>().enabled = false;
@@ -21,7 +24,8 @@ public class PlatformBounce : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-    	if(collision.gameObject.tag == "Grounded" && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0 && inGame) {
+        player = GameObject.Find("Matematic");
+    	if(collision.gameObject.tag == "Grounded" && collision.gameObject.GetComponent<Rigidbody2D>().velocity.y <= 0 && player.GetComponent<MovementWithNoJump>().inGame) {
             collision.transform.GetComponent<ContadorPunts>().CanviaPunts(transform.parent.transform.position.y);
 			collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpSpeed),  ForceMode2D.Impulse);
             anim.SetBool("isJumping", false);
@@ -32,12 +36,4 @@ public class PlatformBounce : MonoBehaviour
 	    }
     }
 
-    public static bool INGAME {
-        get {
-            return inGame;
-        }
-        set {
-            inGame = value;
-        }
-    }
 }

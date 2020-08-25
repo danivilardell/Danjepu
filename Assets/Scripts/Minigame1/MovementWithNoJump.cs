@@ -35,7 +35,6 @@ public class MovementWithNoJump : MonoBehaviour
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
             inGame = false;
-            PlatformBounce.INGAME = false;
         }
     }
 
