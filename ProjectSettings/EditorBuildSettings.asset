@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/ClimbThePrime.unity
+    path: Assets/Scenes/Minigame1.unity
     guid: 901cb4edeb10d4167b6414a6f405de11
   m_configObjects: {}
