@@ -87,7 +87,7 @@ public class Game_Control : MonoBehaviour
     {
         if(visibleFaces[0] == visibleFaces[1])
         {
-            FindObjectOfType<AudioManager>().PlaySound("Campanilla");
+            //FindObjectOfType<AudioManagerScript>().PlaySound("Campanilla");
             visibleFaces[0] = -1;
             visibleFaces[1] = -2;
             ++matches;
@@ -128,7 +128,7 @@ public class Game_Control : MonoBehaviour
 
     public void CompleteLevel()
     {
-        FindObjectOfType<AudioManager>().PlaySound("Aplausos");
+        //FindObjectOfType<AudioManager>().PlaySound("Aplausos");
 
         //Al activar "completeLevelUI" se dispara su transición y esta activa el cambio de escena al final.
         completeLevelUI.SetActive(true); 
