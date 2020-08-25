@@ -13,12 +13,12 @@ public class MovementWithNoJump : MonoBehaviour
     private Animator anim;
     private float moveSpeed = 5f;
     public bool inGame;
-    public InputField playername;
 
 
     void Start() {
         inGame = true;
         anim = GetComponent<Animator>();
+        Debug.Log(Menu.PLAYERNAME);
     }
 
     void Update() {
@@ -30,7 +30,7 @@ public class MovementWithNoJump : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Enemy") {
             
-            HighscoreTable.AddNewHighscore(playername.text, transform.GetComponent<ContadorPunts>().punts);
+            HighscoreTable.AddNewHighscore(Menu.PLAYERNAME, transform.GetComponent<ContadorPunts>().punts);
 
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
