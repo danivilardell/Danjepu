@@ -7,7 +7,7 @@ public class DisplayHighscore : MonoBehaviour
 {
 	public GameObject[] highscoreText;
 	HighscoreTable highscoreManager;
-  public static bool isLegendary;
+  	public static bool isLegendary;
     
     void Start()
     {

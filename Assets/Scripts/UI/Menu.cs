@@ -34,4 +34,13 @@ public class Menu : MonoBehaviour
     public void LoadMainMenu() {
         SceneManager.LoadScene("Menu");
     }
+
+    public static bool INGAME {
+        get {
+            return inGame;
+        }
+        set {
+            inGame = value;
+        }
+    }
 }
