@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3744087731890124508}
   - component: {fileID: 3932332750185415513}
   m_Layer: 0
-  m_Name: PlataformaNumero
+  m_Name: PlataformaNumero 2
   m_TagString: Plataforma
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.44}
   m_SizeDelta: {x: 0.2, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &3744087732684725730
@@ -303,7 +303,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3366709539057952104, guid: 7a629bfa1ebbf47a8854751297b49177,
+  m_Sprite: {fileID: 7659876324293798459, guid: 7a629bfa1ebbf47a8854751297b49177,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -336,11 +336,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0014366508, y: 0.04}
+  m_Offset: {x: -0.0014366508, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4274074, y: 0.10483191}
+    oldSize: {x: 0.43074074, y: 0.2285558}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

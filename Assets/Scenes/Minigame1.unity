@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3805,7 +3805,6 @@ GameObject:
   - component: {fileID: 648568473}
   - component: {fileID: 648568472}
   - component: {fileID: 648568471}
-  - component: {fileID: 648568470}
   - component: {fileID: 648568469}
   m_Layer: 5
   m_Name: Exit
@@ -3846,21 +3845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b29c361d3c984244ba10f5af398a02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &648568470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648568467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9cb7c34d4ec4d4581eb780f3d9610f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
-  playernameInput: {fileID: 0}
 --- !u!114 &648568471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10566,6 +10550,24 @@ PrefabInstance:
       propertyPath: prefabWallR
       value: 
       objectReference: {fileID: 5156046888824779582, guid: 3bce40b66ff2d4971b20ea86216428c9,
+        type: 3}
+    - target: {fileID: 6545290855091692496, guid: 409ab8ece08bb4338a22bcae42a3a698,
+        type: 3}
+      propertyPath: prefab1
+      value: 
+      objectReference: {fileID: 3744087731890124508, guid: dd0980c9c8ad24de4a0abc02459ad665,
+        type: 3}
+    - target: {fileID: 6545290855091692496, guid: 409ab8ece08bb4338a22bcae42a3a698,
+        type: 3}
+      propertyPath: prefab2
+      value: 
+      objectReference: {fileID: 3744087731890124508, guid: 01fd3b015224d497a9201b159a859eb7,
+        type: 3}
+    - target: {fileID: 6545290855091692496, guid: 409ab8ece08bb4338a22bcae42a3a698,
+        type: 3}
+      propertyPath: prefab3
+      value: 
+      objectReference: {fileID: 3744087731890124508, guid: 1b751d83a4ae34afca969eeca2b78eda,
         type: 3}
     - target: {fileID: 6545290855091692498, guid: 409ab8ece08bb4338a22bcae42a3a698,
         type: 3}

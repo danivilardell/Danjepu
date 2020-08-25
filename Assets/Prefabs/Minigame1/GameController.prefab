@@ -50,6 +50,7 @@ MonoBehaviour:
   puntuador: {fileID: 0}
   player: {fileID: 0}
   mapMove: {fileID: 0}
+  highscore: {fileID: 0}
   initialJumpSpeed: 8
 --- !u!114 &6545290855091692496
 MonoBehaviour:
@@ -63,7 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb42d5665ed94882a4c723ae112be0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3744087731890124508, guid: dd0980c9c8ad24de4a0abc02459ad665, type: 3}
+  prefab1: {fileID: 3744087731890124508, guid: dd0980c9c8ad24de4a0abc02459ad665, type: 3}
+  prefab2: {fileID: 3744087731890124508, guid: 01fd3b015224d497a9201b159a859eb7, type: 3}
+  prefab3: {fileID: 3744087731890124508, guid: 1b751d83a4ae34afca969eeca2b78eda, type: 3}
   prefabWallR: {fileID: 5156046888824779582, guid: 3bce40b66ff2d4971b20ea86216428c9,
     type: 3}
   prefabWallL: {fileID: 6186415916413149319, guid: 6cbecf2d27d6e46c5bc671c2643bfddb,

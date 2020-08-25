@@ -5,9 +5,12 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
 
-	public Transform prefab;
+	public Transform prefab1;
+	public Transform prefab2;
+	public Transform prefab3;
 	[SerializeField] private Transform prefabWallR;
 	public Transform prefabWallL;
+	private Transform prefab;
 	public static int interval = 50;
 	public static int numeroBase = 2;
 	[SerializeField] public int initheight;
@@ -17,6 +20,7 @@ public class MapGenerator : MonoBehaviour
 	private int randomNum;
 	private float[] posicions = {0f, 0f, 0f};
 	public static  int it = 1;
+	private int canvi = 20;
 
 	public void Restart() {
 		if(!DisplayHighscore.ISLEGENDARY) {
@@ -32,6 +36,19 @@ public class MapGenerator : MonoBehaviour
 	}
 
 	public void creaPlataformes() {
+		if(contador > canvi) {
+			System.Random r = new System.Random();
+			randomNum = r.Next(1, 3);
+			if(randomNum == 1) {
+				prefab = prefab2;
+			}
+			else if(randomNum == 2)prefab = prefab3;
+			else prefab = prefab1;
+		} 
+		else {
+			prefab = prefab1;
+		}
+
 		for(int i = 0; i < 2; i++) {
 			prime = false;
 			System.Random r = new System.Random();
@@ -41,7 +58,17 @@ public class MapGenerator : MonoBehaviour
 			posicions[0] = Random.Range(-8.5f, 8.5f);
 			Instantiate(prefab, new Vector3(posicions[0], initheight + contador, 0), Quaternion.identity).transform.parent = GameObject.Find("PlataformesNoves").transform;
 
-
+			if(contador > canvi) {
+				randomNum = r.Next(1, 3);
+				if(randomNum == 1) {
+					prefab = prefab2;
+				}
+				else if(randomNum == 2)prefab = prefab3;
+				else prefab = prefab1;
+			} 
+			else {
+				prefab = prefab1;
+			}
 
 			randomNum = r.Next(numeroBase, numeroBase + interval);
 			if(isPrimeNum(randomNum)) prime = true;
@@ -52,6 +79,17 @@ public class MapGenerator : MonoBehaviour
 			}
 			Instantiate(prefab, new Vector3(posicions[1], initheight + contador, 0), Quaternion.identity).transform.parent = GameObject.Find("PlataformesNoves").transform;
 
+			if(contador > canvi) {
+				randomNum = r.Next(1, 3);
+				if(randomNum == 1) {
+					prefab = prefab2;
+				}
+				else if(randomNum == 2)prefab = prefab3;
+				else prefab = prefab1;
+			} 
+			else {
+				prefab = prefab1;
+			}
 
 			randomNum = r.Next(numeroBase, numeroBase + interval);
 			while(!isPrimeNum(randomNum) && !prime) {
