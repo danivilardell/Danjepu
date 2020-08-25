@@ -11,6 +11,9 @@ TagManager:
   - Grounded
   - Plataforma
   - Carta
+  - Teleport
+  - Bounce
+  - Fast
   layers:
   - Default
   - TransparentFX

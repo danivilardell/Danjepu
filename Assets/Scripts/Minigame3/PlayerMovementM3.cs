@@ -2,12 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementM3 : MonoBehaviour
 {
-    void OnCollisionEnter(Collider col) {
-    	Debug.Log("hola");
-    	if(col.gameObject.tag == "Teleport") {
+	private float jumpSpeed = 10;
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+    	Debug.Log(col.transform.rotation.z);
+    	if(col.gameObject.tag == "Teleport"){
     		transform.position = col.transform.parent.GetChild(1).transform.position;
+    	}
+
+    	if(col.gameObject.tag == "Fast"){
+    		transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Sin(col.transform.rotation.z)*jumpSpeed, Mathf.Cos(col.transform.rotation.z)*jumpSpeed),  ForceMode2D.Impulse);
+    	}
+
+    }
+    void OnCollisionEnter2D(Collision2D col){
+	    if(col.gameObject.tag == "Bounce"){
+	    	transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Sin(col.transform.rotation.z)*jumpSpeed, Mathf.Cos(col.transform.rotation.z)*jumpSpeed),  ForceMode2D.Impulse);
     	}
     }
 }
