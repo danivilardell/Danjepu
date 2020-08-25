@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class Game_Control : MonoBehaviour
 {
     GameObject token;
-    List<int> faceindexes = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7};
+    List<int> faceindexes = new List<int> { 0, 0};
     public static System.Random rnd = new System.Random();
     public int shuffleNum = 0;
     public int[] visibleFaces = { -1, -2 };
@@ -131,20 +131,8 @@ public class Game_Control : MonoBehaviour
         //FindObjectOfType<AudioManager>().PlaySound("Aplausos");
 
         //Al activar "completeLevelUI" se dispara su transición y esta activa el cambio de escena al final.
-        completeLevelUI.SetActive(true); 
+        //completeLevelUI.SetActive(true);
 
-    }
-
-    public void OptionButtonOn()
-    {
-        //Estoy en el menú de opciones. Triggered por botón.
-        OptionMenu = true;
-    }
-
-    public void OptionButtonOff()
-    {
-        //Salgo del menú de opciones. Triggered por botón.
-        OptionMenu = false;
     }
 
     private void Awake()
