@@ -37,9 +37,9 @@ public class MovementWithNoJump : MonoBehaviour
             endPanel.SetActive(true);
             anim.SetBool("isJumping", false);
             FindObjectOfType<AudioManagerScript>().PlaySound("Ouch");
-            //gameObject.transform.GetChild(2).GetComponent<BoxCollider>().enabled = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, 10f), ForceMode2D.Impulse);
-            anim.SetTrigger("Death");
+            gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, 30f), ForceMode2D.Impulse);
+            anim.SetBool("Death", true);
             inGame = false;
         }
     }

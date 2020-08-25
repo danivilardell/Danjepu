@@ -2436,12 +2436,12 @@ PrefabInstance:
     - target: {fileID: 3976305617740010564, guid: 21f5afe05c0437346a73260e2c7cb78f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3976305617740010564, guid: 21f5afe05c0437346a73260e2c7cb78f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21f5afe05c0437346a73260e2c7cb78f, type: 3}
@@ -4607,6 +4607,7 @@ MonoBehaviour:
   respawn: {fileID: 1119080836}
   canvas: {fileID: 2054896534}
   pun: {fileID: 455177989}
+  anim: {fileID: 1261755154}
   acudits:
   - Should we say all prime numbers are odd but one or 2?
   - Pro tip, 6 is not prime
@@ -5376,7 +5377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1079771178
 Transform:
   m_ObjectHideFlags: 0
@@ -6010,6 +6011,12 @@ MonoBehaviour:
 --- !u!4 &1261755153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1935348663652497000, guid: 640eb820500ca4647ad3abb13b4ffc96,
+    type: 3}
+  m_PrefabInstance: {fileID: 4381991663641355428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1261755154 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1935348663652497003, guid: 640eb820500ca4647ad3abb13b4ffc96,
     type: 3}
   m_PrefabInstance: {fileID: 4381991663641355428}
   m_PrefabAsset: {fileID: 0}
@@ -9163,7 +9170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1907752242
 Transform:
   m_ObjectHideFlags: 0

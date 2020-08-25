@@ -30,7 +30,7 @@ public class StartMiniGame1 : MonoBehaviour
                 MapGenerator.NUMEROBASE = 4;
             }
             else {
-                MapGenerator.CONTADOR = 0;
+                MapGenerator.CONTADOR = 3;
                 MapGenerator.INTERVAL = 200;
                 MapGenerator.NUMEROBASE = 100;
             }

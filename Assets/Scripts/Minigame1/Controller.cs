@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour
 	[SerializeField] GameObject respawn;
 	[SerializeField] GameObject canvas;
 	[SerializeField] Text pun;
+	[SerializeField] private Animator anim;
 
 	public string[] acudits = {
 		"Should we say all prime numbers are odd but one or 2?",
@@ -50,6 +51,8 @@ public class Controller : MonoBehaviour
         MapGenerator.INTERVAL = 50;
         MapGenerator.NUMEROBASE = 0;
 		transform.GetComponent<MapGenerator>().creaPlataformes();
+		jugador.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+		anim.SetBool("Death", false);
 	}
 
     public void Restart() {
@@ -72,6 +75,11 @@ public class Controller : MonoBehaviour
         MapGenerator.INTERVAL = 50;
         MapGenerator.NUMEROBASE = 0;
 		transform.GetComponent<MapGenerator>().creaPlataformes();
+		jugador.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+		anim.SetBool("Death", false);
+		jugador.transform.position = new Vector2(-3.68f, -0.56f);
+		jugador.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+		jugador.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
 }
