@@ -13,6 +13,7 @@ public class StartMiniGame1 : MonoBehaviour
     [SerializeField] GameObject mapMove;
     [SerializeField] GameObject highscore;
     [SerializeField] GameObject reglas;
+    [SerializeField] GameObject controller;
     [SerializeField] private float initialJumpSpeed;
     private Animator anim;
 
@@ -26,13 +27,13 @@ public class StartMiniGame1 : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(start) && !started) {
-            if(!DisplayHighscore.ISLEGENDARY) {
-                MapGenerator.CONTADOR = 4;
+            if(!controller.GetComponent<DisplayHighscore>().isLegendary) {
+                MapGenerator.CONTADOR = 2;
                 MapGenerator.INTERVAL = 50;
                 MapGenerator.NUMEROBASE = 4;
             }
             else {
-                MapGenerator.CONTADOR = 3;
+                MapGenerator.CONTADOR = 2;
                 MapGenerator.INTERVAL = 200;
                 MapGenerator.NUMEROBASE = 100;
             }

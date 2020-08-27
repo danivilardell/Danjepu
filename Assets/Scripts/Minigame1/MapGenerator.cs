@@ -20,12 +20,15 @@ public class MapGenerator : MonoBehaviour
 	private int randomNum;
 	private float[] posicions = {0f, 0f, 0f};
 	public static  int it = 1;
-	private int canvi = 20;
+	private int canvi = 60;
+	public GameObject controller;
+	private int difNor = 10;
+	private int difLeg = 8;
 
 	public void Restart() {
-		if(!DisplayHighscore.ISLEGENDARY) {
+		if(!controller.GetComponent<DisplayHighscore>().isLegendary) {
 			contador = 0;
-			interval = 50;
+			interval = 25;
 			numeroBase = 2;
 		}
 		else {
@@ -36,6 +39,7 @@ public class MapGenerator : MonoBehaviour
 	}
 
 	public void creaPlataformes() {
+		Debug.Log(controller.GetComponent<DisplayHighscore>().isLegendary);
 		if(contador > canvi) {
 			System.Random r = new System.Random();
 			randomNum = r.Next(1, 3);
@@ -103,17 +107,18 @@ public class MapGenerator : MonoBehaviour
 			Instantiate(prefab, new Vector3(posicions[2], initheight + contador, 0), Quaternion.identity).transform.parent = GameObject.Find("PlataformesNoves").transform;
 			contador += 2;
 		}
-
-		if(contador%12 == 0 || contador%12 == 1) {
-			if(!DisplayHighscore.ISLEGENDARY) {
-				interval = (int)(1.2 * interval);
-				numeroBase += 4*it;
-			} 
+		
+		if((contador%difNor == 0 || contador%difNor == 1 || contador%difNor == 2 || contador%difNor == 3) && !controller.GetComponent<DisplayHighscore>().isLegendary) {
+			interval = (int)(1.1 * interval);
+			numeroBase += 5*it;
+			Debug.Log("Normal");
 		}
-		if(contador%6 == 0 || contador%6 == 1 && DisplayHighscore.ISLEGENDARY) {
-			interval = (int)1.7 * interval;
+		if((contador%difLeg == 0 || contador%difLeg == 1 || contador%difLeg == 2 || contador%difLeg == 3) && controller.GetComponent<DisplayHighscore>().isLegendary) {
+			interval = (int)2 * interval;
 			numeroBase += 30*it;
+			Debug.Log("Legendary");
 		}
+		Debug.Log(contador);
 		Instantiate(prefabWallR, new Vector3(10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 		Instantiate(prefabWallL, new Vector3(-10, initheightWall + 16.4f * it, 0), Quaternion.identity).transform.parent = GameObject.Find("ParedsNoves").transform;
 		it++;

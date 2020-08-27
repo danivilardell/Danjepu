@@ -19,7 +19,6 @@ public class MovementWithNoJump : MonoBehaviour
     void Start() {
         inGame = true;
         anim = GetComponent<Animator>();
-        Debug.Log(Menu.PLAYERNAME);
     }
 
     void Update() {

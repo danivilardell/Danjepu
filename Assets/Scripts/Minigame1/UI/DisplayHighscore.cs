@@ -7,7 +7,7 @@ public class DisplayHighscore : MonoBehaviour
 {
 	public GameObject[] highscoreText;
 	HighscoreTable highscoreManager;
-  	public static bool isLegendary;
+  	public bool isLegendary;
     
     void Start()
     {
@@ -19,6 +19,7 @@ public class DisplayHighscore : MonoBehaviour
        	highscoreManager = GetComponent<HighscoreTable>();
 
        	StartCoroutine("RefreshHighscores");
+       	isLegendary = false;
     }
 
     public void StartGame() {
@@ -57,12 +58,4 @@ public class DisplayHighscore : MonoBehaviour
         isLegendary = isLeg;
     }
 
-    public static bool ISLEGENDARY {
-        get {
-            return isLegendary;
-        }
-        set {
-            isLegendary = value;
-        }
-    }
 }

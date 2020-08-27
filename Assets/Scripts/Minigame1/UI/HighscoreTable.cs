@@ -44,14 +44,14 @@ public class HighscoreTable : MonoBehaviour
 
     	if(string.IsNullOrEmpty(www.error)) {
             FormatHighscores(www.text);
-            if(DisplayHighscore.ISLEGENDARY) highscoresDisplay.OnHighscoresDownloaded(highscoreList);
+            if(transform.GetComponent<DisplayHighscore>().isLegendary) highscoresDisplay.OnHighscoresDownloaded(highscoreList);
             else highscoresDisplay.OnHighscoresDownloaded(highscoreListLeg);
         }
     	else print ("Error Downloading: " + www.error);
     }
 
     void FormatHighscores(string textStream) {
-        if(DisplayHighscore.ISLEGENDARY) {
+        if(transform.GetComponent<DisplayHighscore>().isLegendary) {
             string[] entries = textStream.Split(new char[] {'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
             highscoreList = new Highscore[entries.Length];
 
