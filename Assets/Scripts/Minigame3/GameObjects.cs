@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameObjects : MonoBehaviour
 {
-	private float jumpSpeed = 100;
+	private float jumpSpeed = 48;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -19,9 +19,8 @@ public class GameObjects : MonoBehaviour
 
     }
     void OnCollisionEnter2D(Collision2D col){
-    	Debug.Log("hola");
 	    if(col.gameObject.tag == "Bounce"){
-	    	transform.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Sin(col.transform.rotation.z)*jumpSpeed, Mathf.Cos(col.transform.rotation.z)*jumpSpeed),  ForceMode2D.Impulse);
+	    	transform.parent.parent.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Mathf.Sin(col.transform.rotation.z)*jumpSpeed, Mathf.Cos(col.transform.rotation.z)*jumpSpeed),  ForceMode2D.Impulse);
     	}
     }
 }

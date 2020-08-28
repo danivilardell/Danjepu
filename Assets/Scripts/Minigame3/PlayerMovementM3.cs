@@ -28,7 +28,7 @@ public class PlayerMovementM3 : MonoBehaviour
     }
 
     void FixedUpdate() {
-        Debug.Log(hInput);
         rb.AddTorque(-hInput * speed * Time.fixedDeltaTime);
     }
+
 }

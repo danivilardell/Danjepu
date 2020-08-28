@@ -380,12 +380,12 @@ PrefabInstance:
     - target: {fileID: 6884670039727226180, guid: 7242aba608b044838ae4db1b21c9b441,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.49
+      value: 3.76
       objectReference: {fileID: 0}
     - target: {fileID: 6884670039727226180, guid: 7242aba608b044838ae4db1b21c9b441,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.26
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 6884670039727226180, guid: 7242aba608b044838ae4db1b21c9b441,
         type: 3}
@@ -749,6 +749,7 @@ GameObject:
   - component: {fileID: 220027983}
   - component: {fileID: 220027984}
   - component: {fileID: 220027985}
+  - component: {fileID: 220027986}
   m_Layer: 0
   m_Name: WheelR
   m_TagString: Untagged
@@ -858,6 +859,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &220027986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220027981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b484865fc64d17ac2955e6d95fd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &262241121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1274,6 +1287,7 @@ GameObject:
   - component: {fileID: 294820761}
   - component: {fileID: 294820763}
   - component: {fileID: 294820765}
+  - component: {fileID: 294820764}
   m_Layer: 0
   m_Name: WheelL
   m_TagString: Untagged
@@ -1362,6 +1376,18 @@ CircleCollider2D:
   m_Offset: {x: -0.043838914, y: 0.0000011026859}
   serializedVersion: 2
   m_Radius: 0.43207046
+--- !u!114 &294820764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294820760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b484865fc64d17ac2955e6d95fd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &294820765
 Rigidbody2D:
   serializedVersion: 4
@@ -1558,7 +1584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &310973557
 Transform:
   m_ObjectHideFlags: 0
@@ -2875,7 +2901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1023125210
 Transform:
   m_ObjectHideFlags: 0
@@ -3543,6 +3569,8 @@ GameObject:
   - component: {fileID: 1231573739}
   - component: {fileID: 1231573738}
   - component: {fileID: 1231573740}
+  - component: {fileID: 1231573741}
+  - component: {fileID: 1231573742}
   m_Layer: 0
   m_Name: BiciMan
   m_TagString: Untagged
@@ -3558,7 +3586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231573733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.04, y: 8.32, z: 0}
+  m_LocalPosition: {x: -12.81, y: -1.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1033148142}
@@ -3640,7 +3668,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.7
-    m_Frequency: 20
+    m_Frequency: 12
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -3664,7 +3692,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.7
-    m_Frequency: 20
+    m_Frequency: 12
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -3684,6 +3712,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CenterOfMass2: {x: 0.31, y: 0.08, z: 0}
   Awake: 0
+--- !u!58 &1231573741
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231573733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.66}
+  serializedVersion: 2
+  m_Radius: 0.42
+--- !u!114 &1231573742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231573733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6070b474706c44db8c8b76084ddce40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237064969
 GameObject:
   m_ObjectHideFlags: 0
