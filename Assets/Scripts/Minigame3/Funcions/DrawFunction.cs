@@ -16,7 +16,11 @@ public class DrawFunction : MonoBehaviour
     //private var parser;
 
     // Start is called before the first frame update
-    void Start()
+    void Start() {
+        Restart();
+    }
+
+    public void Restart()
     {
         graph = gameObject;
         col = graph.transform.GetComponentInChildren<EdgeCollider2D>();
@@ -48,7 +52,7 @@ public class DrawFunction : MonoBehaviour
         float xscale = graph.transform.localScale[0];
         float yscale = graph.transform.localScale[1];
         
-        for (float x = -8f; x <= 8.01f; x += .01f) {
+        for (float x = -7.65f; x <= 7f; x += .01f) {
             exp.Parameters["x"].Value = x; // set the named parameter "x"
             points.Add( new Vector2(x/xscale, (float) (exp.Value)/yscale) );
             //points.Add( new Vector2(i/xscale, (i*i)/yscale) );
