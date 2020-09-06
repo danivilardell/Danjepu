@@ -8,7 +8,6 @@ public class GameObjects : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-    	Debug.Log(col.transform.rotation.z);
     	if(col.gameObject.tag == "Teleport"){
     		transform.position = col.transform.parent.GetChild(1).transform.position;
     	}

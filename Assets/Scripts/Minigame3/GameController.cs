@@ -50,4 +50,15 @@ public class GameController : MonoBehaviour
         jugador.transform.position = levels.transform.GetChild(actualLevel - 1).GetChild(0).GetChild(0).transform.position;
     	graph.GetComponent<DrawFunction>().Restart();
     }
+
+    public void BeatedLevel() {
+        if(actualLevel <= PlayerPrefs.GetInt("lastLevel")) return;
+        PlayerPrefs.SetInt("lastLevel", actualLevel);
+    }
+
+    public void ClearLevels() {
+        for(int i = 0; i < levels.transform.childCount; i++) {
+            levels.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
 }

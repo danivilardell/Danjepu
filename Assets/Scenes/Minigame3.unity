@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -623,6 +623,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 494101031}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!222 &52208530
 CanvasRenderer:
@@ -1168,7 +1179,7 @@ GameObject:
   - component: {fileID: 173713514}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,8 +1251,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193420775}
   m_LocalRotation: {x: 0, y: 0, z: -0.13986434, w: 0.9901707}
-  m_LocalPosition: {x: 6.66, y: -3.69, z: 154.4421}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: 6.8, y: -6.34, z: 154.4421}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1046327502}
   m_RootOrder: 3
@@ -4240,7 +4251,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.47195056
+        value: 0.28445056
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -5952,7 +5963,7 @@ GameObject:
   - component: {fileID: 505460253}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6373,6 +6384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1310320836}
+  controller: {fileID: 0}
 --- !u!1 &738585293
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,9 +6508,10 @@ GameObject:
   m_Component:
   - component: {fileID: 763770805}
   - component: {fileID: 763770806}
+  - component: {fileID: 763770807}
   m_Layer: 0
-  m_Name: GameObject (3)
-  m_TagString: Untagged
+  m_Name: Flag
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6527,7 +6540,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6535,6 +6548,20 @@ EdgeCollider2D:
   m_Points:
   - {x: 12.691938, y: 2.3066154}
   - {x: 12.61236, y: 0.7583394}
+--- !u!114 &763770807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763770804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6070b474706c44db8c8b76084ddce40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1310320836}
+  controller: {fileID: 0}
 --- !u!1 &778319986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,7 +6809,7 @@ GameObject:
   - component: {fileID: 831703393}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6992,8 +7019,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859730553}
-  m_LocalRotation: {x: 0, y: 0, z: -0.5737193, w: 0.819052}
-  m_LocalPosition: {x: 3.37, y: 1.58, z: 154.44208}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6237431, w: 0.78162944}
+  m_LocalPosition: {x: 3.23, y: 1.2, z: 154.44208}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 1538675057}
@@ -7002,7 +7029,7 @@ Transform:
   - {fileID: 981655985}
   m_Father: {fileID: 1046327502}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -70.02}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -77.18}
 --- !u!58 &859730555
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7032,6 +7059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1310320836}
+  controller: {fileID: 0}
 --- !u!58 &859730557
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8674,6 +8702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1310320836}
+  controller: {fileID: 0}
 --- !u!58 &1231573743
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9399,7 +9428,7 @@ GameObject:
   - component: {fileID: 1505897407}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10670,6 +10699,7 @@ GameObject:
   - component: {fileID: 1882745367}
   - component: {fileID: 1882745366}
   - component: {fileID: 1882745365}
+  - component: {fileID: 1882745364}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -10677,6 +10707,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1882745364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882745363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bf3102389724327852e7260661b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathContainer: {fileID: 1474081138}
 --- !u!114 &1882745365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11182,7 +11225,7 @@ GameObject:
   - component: {fileID: 1941672618}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11455,7 +11498,51 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1046327501}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1882745364}
+        m_MethodName: DrawPath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 383710402}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 28940101}
+        m_MethodName: ClearLevels
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1948773307
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11969,7 +12056,7 @@ GameObject:
   - component: {fileID: 2050131160}
   m_Layer: 0
   m_Name: Flag
-  m_TagString: Untagged
+  m_TagString: Flag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12194,7 +12281,7 @@ GameObject:
   - component: {fileID: 2105888831}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

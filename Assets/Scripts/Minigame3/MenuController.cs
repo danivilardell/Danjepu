@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    public GameObject levels;
-    public GameObject player;
+    public GameObject pathContainer;
 
-    void LoadLevel(int level) {
-    	levels.transform.GetChild(level).gameObject.SetActive(true);
-    	player.transform.position = levels.transform.GetChild(level).GetChild(0).position;
+    void Start() {
+    	DrawPath();
     }
 
-    public void LoadMainMenu() {
-        SceneManager.LoadScene("Menu");
+    public void DrawPath() {
+    	if (!PlayerPrefs.HasKey("lastLevel")) PlayerPrefs.SetInt("lastLevel", 0);
+    	int lastLevel = PlayerPrefs.GetInt("lastLevel");
+    	Debug.Log(lastLevel);
+    	for(int i = 1; i <= pathContainer.transform.childCount; i++) {
+    		if(i <= lastLevel) pathContainer.transform.GetChild(i - 1).GetChild(0).gameObject.SetActive(true);
+    		else pathContainer.transform.GetChild(i - 1).GetChild(0).gameObject.SetActive(false);
+    	}
     }
 
 }
