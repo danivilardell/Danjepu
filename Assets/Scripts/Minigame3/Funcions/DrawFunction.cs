@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using B83.ExpressionParser;
+using System;
 
 public class DrawFunction : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DrawFunction : MonoBehaviour
     private EdgeCollider2D col;
     private LineRenderer line;
     private GameObject inputText;
+    public GameObject exceptionCanvas;
     //private var parser;
 
     // Start is called before the first frame update
@@ -62,13 +64,21 @@ public class DrawFunction : MonoBehaviour
     public void NewFunction() 
     {
         string function = inputText.GetComponent<Text>().text;
-        Debug.Log(function);
-        FuncToPoints(function);
+	    try {
+	        FuncToPoints(function);
+	        // amb el collider simplement es pot fer aixo
+	        col.points = points.ToArray();
+	        // amb el line renderer, com que es 3D sembla que s'ha de fer aquest arreglo
+	        StartCoroutine(DrawGradually());
+	    }
+	    catch (Exception e) {
+	    	Debug.Log("hola");
+	        exceptionCanvas.SetActive(true);
+	        StartCoroutine(Wait2Seconds());
+	        exceptionCanvas.SetActive(false);
+	    }  
         
-        // amb el collider simplement es pot fer aixo
-        col.points = points.ToArray();
-        // amb el line renderer, com que es 3D sembla que s'ha de fer aquest arreglo
-        StartCoroutine(DrawGradually());
+        
     }
 
     public IEnumerator DrawGradually() {
@@ -78,6 +88,10 @@ public class DrawFunction : MonoBehaviour
             line.SetPosition(i, points[i]);
             if(i%16 == 0) yield return new WaitForSeconds(0.0001f);
         }
+    }
+
+    public IEnumerator Wait2Seconds() {
+        yield return new WaitForSeconds(2f);
     }
 
 }
