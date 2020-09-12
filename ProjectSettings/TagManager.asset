@@ -15,6 +15,7 @@ TagManager:
   - Bounce
   - Fast
   - Flag
+  - Head
   layers:
   - Default
   - TransparentFX

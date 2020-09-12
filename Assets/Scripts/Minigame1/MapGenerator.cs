@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour
 	private int randomNum;
 	private float[] posicions = {0f, 0f, 0f};
 	public static  int it = 1;
-	private int canvi = 60;
+	private int canvi = 100;
 	public GameObject controller;
 	private int difNor = 10;
 	private int difLeg = 8;

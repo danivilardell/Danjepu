@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
         jugador.transform.rotation = Quaternion.identity;
     	jugador.transform.position = levels.transform.GetChild(actualLevel - 1).GetChild(0).GetChild(0).transform.position;
     	graph.GetComponent<DrawFunction>().Restart();
+        jugador.GetComponent<DeathEndScript>().ended = false;
     }
 
     public void NextLevel() {
@@ -57,6 +58,7 @@ public class GameController : MonoBehaviour
     	levels.transform.GetChild(actualLevel - 1).gameObject.SetActive(true);
     	jugador.transform.position = levels.transform.GetChild(actualLevel - 1).GetChild(0).GetChild(0).transform.position;
     	graph.GetComponent<DrawFunction>().Restart();
+        jugador.GetComponent<DeathEndScript>().ended = false;
     }
 
     public void RestartCurrentLevel() {
@@ -69,14 +71,24 @@ public class GameController : MonoBehaviour
         roda2.GetComponent<Rigidbody2D>().angularVelocity = 0f;
         jugador.transform.position = levels.transform.GetChild(actualLevel - 1).GetChild(0).GetChild(0).transform.position;
     	graph.GetComponent<DrawFunction>().Restart();
+        jugador.GetComponent<DeathEndScript>().ended = false;
     }
 
-    public void BeatedLevel() {
+    public void BeatedLevel(bool isHead) {
         if(rotTot > 0) rotacions = (int)(rotTot+120)/360;
         else rotacions = (int)(rotTot-120)/360;
-        Debug.Log(rotacions);
+
+        //Per haverlo completat
         int p = actualLevel - 1;
         PlayerPrefs.SetInt("Star" + p, 1);
+
+        //Per fer les rotacions que tocaven
+        if(rotacionsPerNivell[p] > 0 && rotacions >= rotacionsPerNivell[p]) {
+            PlayerPrefs.SetInt("Star" + p, 2);
+        } else if(rotacionsPerNivell[p] < 0 && rotacions <= rotacionsPerNivell[p]) {
+            PlayerPrefs.SetInt("Star" + p, 2);
+        }
+
         if(actualLevel <= PlayerPrefs.GetInt("lastLevel")) return;
         PlayerPrefs.SetInt("lastLevel", actualLevel);
         rotacions = 0;
