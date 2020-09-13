@@ -12,17 +12,16 @@ public class Controller : MonoBehaviour
 	[SerializeField] GameObject respawn;
 	[SerializeField] GameObject canvas;
 	[SerializeField] Text pun;
+	[SerializeField] GameObject exit;
 	[SerializeField] private Animator anim;
 
 	public string[] acudits = {
 		"Should we say all prime numbers are odd but one or 2?",
 		"Pro tip, 6 is not prime",
-		"Counting primes is like dating, if they are under 13 put them in your head",
 		"What do prime numbers and teenage girls have in common? They both \"can't even\"",
 		"2 is the only even prime number. It's kind of odd, isn't it?",
 		"We should give credit to the number 2. It became a prime number against all odds.",
 		"All prime numbers except 2 are odd, this makes 2 the oddest prime.",
-		"What can a mathematician and a pedophile agree upon? Seven is a prime number",
 		"Why was six afraid of seven? Cause seven, eight, nine!",
 		"Why was six afraid of seven? Aproximatelly -0.89594417018",
 		"Why is statistics never anyone’s favorite subject? It’s just average.",
@@ -71,6 +70,7 @@ public class Controller : MonoBehaviour
 		randomNum = r.Next(0, acudits.Length);
 		pun.text = acudits[randomNum];
 		pun.gameObject.SetActive(true);
+		exit.SetActive(true);
 		MapGenerator.CONTADOR = -2;
         MapGenerator.INTERVAL = 50;
         MapGenerator.NUMEROBASE = 0;

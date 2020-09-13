@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StartMiniGamePhone : MonoBehaviour
 {
-    
+
     public KeyCode start;
     public bool started;
     [SerializeField] GameObject startText;
@@ -13,6 +13,7 @@ public class StartMiniGamePhone : MonoBehaviour
     [SerializeField] GameObject mapMove;
     [SerializeField] GameObject highscore;
     [SerializeField] GameObject controller;
+    [SerializeField] GameObject exit;
     [SerializeField] private float initialJumpSpeed;
     private Animator anim;
 
@@ -38,8 +39,9 @@ public class StartMiniGamePhone : MonoBehaviour
             MapGenerator.IT = 1;
             player.GetComponent<ContadorPunts>().Start();
             highscore.GetComponent<DisplayHighscore>().StartGame();
-            started = true;    
+            started = true;
             startText.SetActive(false);
+            exit.SetActive(false);
             puntuador.SetActive(true);
             anim.SetTrigger("jump");
             anim.SetBool("isJumping", true);
