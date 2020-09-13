@@ -826,7 +826,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 958415586}
+      - m_Target: {fileID: 1179375002}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -4751,18 +4751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919d3340a444d94409a89a81b27ce216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &958415586 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5441465401275767225, guid: 409ab8ece08bb4338a22bcae42a3a698,
-    type: 3}
-  m_PrefabInstance: {fileID: 5441465401965714267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1179374999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a877eb853b3dc4a93be82cb0216af95b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &959804048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,6 +6440,41 @@ MonoBehaviour:
   highscore: {fileID: 1500167621}
   controller: {fileID: 1500167621}
   initialJumpSpeed: 8
+--- !u!114 &1179375002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179374999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cac62f47b5c44e6e90b882b4c2e27c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plataformes: {fileID: 1540686845}
+  jugador: {fileID: 1261755146}
+  mapaMove: {fileID: 867426}
+  respawn: {fileID: 1119080836}
+  canvas: {fileID: 2054896534}
+  pun: {fileID: 455177989}
+  anim: {fileID: 1261755154}
+  startButton: {fileID: 1116263319}
+  acudits:
+  - Should we say all prime numbers are odd but one or 2?
+  - Pro tip, 6 is not prime
+  - Counting primes is like dating, if they are under 13 put them in your head
+  - What do prime numbers and teenage girls have in common? They both "can't even"
+  - 2 is the only even prime number. It's kind of odd, isn't it?
+  - We should give credit to the number 2. It became a prime number against all odds.
+  - All prime numbers except 2 are odd, this makes 2 the oddest prime.
+  - What can a mathematician and a pedophile agree upon? Seven is a prime number
+  - Why was six afraid of seven? Cause seven, eight, nine!
+  - Why was six afraid of seven? Aproximatelly -0.89594417018
+  - "Why is statistics never anyone\u2019s favorite subject? It\u2019s just average."
+  - "You should never start a conversation with Pi. It\u2019ll just go on and on
+    forever."
+  - I poured root beer into a square cup. Now I have beer.
 --- !u!1 &1250934045
 GameObject:
   m_ObjectHideFlags: 0
@@ -7223,7 +7246,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 958415586}
+      - m_Target: {fileID: 1179375002}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -11385,5 +11408,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1261755154}
+    - target: {fileID: 5441465401275767225, guid: 409ab8ece08bb4338a22bcae42a3a698,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 409ab8ece08bb4338a22bcae42a3a698, type: 3}
