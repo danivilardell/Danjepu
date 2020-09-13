@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class StartMiniGame1 : MonoBehaviour
 {
-    
+
     public KeyCode start;
     public bool started;
     [SerializeField] GameObject startText;
     [SerializeField] GameObject puntuador;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject exit;
     [SerializeField] GameObject mapMove;
     [SerializeField] GameObject highscore;
     [SerializeField] GameObject reglas;
@@ -41,8 +42,9 @@ public class StartMiniGame1 : MonoBehaviour
             MapGenerator.IT = 1;
             player.GetComponent<ContadorPunts>().Start();
             highscore.GetComponent<DisplayHighscore>().StartGame();
-        	started = true;    
+        	started = true;
         	startText.SetActive(false);
+          exit.SetActive(false);
             puntuador.SetActive(true);
             anim.SetTrigger("jump");
             anim.SetBool("isJumping", true);
